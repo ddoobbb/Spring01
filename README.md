@@ -27,7 +27,8 @@
      - Ubuntu EC2 를 구매한 뒤, 8080 포트와 80번 포트를 연결하여 포트 번호 없이도 서비스에 접속 가능하게 하기
 - Use Case
 
-  
+  ![image](https://user-images.githubusercontent.com/110369489/185215991-0cf16a37-fbd5-428b-9855-bf5139448394.png)
+
 
 ## 환경
 - Java 11

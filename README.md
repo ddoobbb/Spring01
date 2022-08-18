@@ -29,7 +29,7 @@
 
 
 ## 환경
-- Java 11
+- Java 8
 - Spring Boot 2.7.1
 - IntelliJ Ultimate 2022.1
 - Spring Web
@@ -38,7 +38,86 @@
 - JPA
 - MySQL
 ## API 설계
-
+| Method | URL | Request | Response |
+| --- | --- | --- | --- |
+| GET | /api/post | - | {
+"success": true,
+"data": [
+{
+"createdAt": "2022-07-25T12:43:01.226062”,
+"modifiedAt": "2022-07-25T12:43:01.226062”,
+"id": 1,
+"title": "title2",
+"author": "author2"
+},
+{
+"createdAt": "2022-07-25T12:43:01.226062”,
+"modifiedAt": "2022-07-25T12:43:01.226062”,
+"id": 2,
+"title": "title",
+"author": "author"
+}
+],
+"error”: null
+} |
+| GET | /api/post/{id} | - | {
+"success": true,
+"data": {
+"createdAt": "2022-07-25T12:43:01.226062”,
+"modifiedAt": "2022-07-25T12:43:01.226062”,
+"id": 1,
+"title": "title2",
+"content": "content2",
+"author": "author2"
+},
+"error": null
+} |
+| POST | /api/post | {
+"title" : "title",
+"content" : "content",
+"author" : "author",
+"password" : "password"
+} | {
+"success": true,
+"data": {
+"createdAt": "2022-07-25T12:43:01.226062”,
+"modifiedAt": "2022-07-25T12:43:01.226062”,
+"id": 1,
+"title": "title",
+"content": "content",
+"author": "author"
+},
+"error": null
+} |
+| POST | /api/post/{id} | {
+"password" :"password"
+} | {
+"success": true,
+"data": true,
+"error": null
+} |
+| PUT | /api/post/{id} | {
+"title" : "title2",
+"content" : "content2",
+"author" : "author2",
+"password" : "password2"
+} | {
+"success": true,
+"data": {
+"createdAt": "2022-07-25T12:43:01.226062”,
+"modifiedAt": "2022-07-25T12:43:01.226062”,
+"id": 1,
+"title": "title2",
+"content": "content2",
+"author": "author2"
+},
+"error": null
+} |
+| DELETE | /api/post/{id} |  | {
+"success": true,
+"data": true,
+"error": null
+} |
 
 
 1. 수정, 삭제 API의 request를 어떤 방식으로 사용하셨나요? (param, query, body)
